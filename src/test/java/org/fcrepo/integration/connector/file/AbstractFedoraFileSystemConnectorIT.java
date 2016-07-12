@@ -64,7 +64,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.TrueFileFilter;
 import org.apache.commons.io.filefilter.WildcardFileFilter;
 
-import org.fcrepo.kernel.api.models.NonRdfSourceDescription;
+import org.fcrepo.kernel.api.models.FedoraResource;
 import org.fcrepo.kernel.api.models.FedoraBinary;
 import org.fcrepo.kernel.api.models.Container;
 import org.fcrepo.kernel.api.services.BinaryService;
@@ -227,7 +227,7 @@ public abstract class AbstractFedoraFileSystemConnectorIT {
     public void testGetFederatedDatastream() throws RepositoryException {
         final Session session = repo.login();
 
-        final NonRdfSourceDescription nonRdfSourceDescription
+        final FedoraResource nonRdfSourceDescription
                 = binaryService.findOrCreate(session, testFilePath()).getDescription();
         assertNotNull(nonRdfSourceDescription);
 
